@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Outer Safety Shield Outline -->
+    <path
+        android:fillColor="#0284C7"
+        android:pathData="M54,22L30,32v24c0,16.5 10.2,32 24,36c13.8,-4 24,-19.5 24,-36V32L54,22z" />
+    <!-- Inner Shield Surface -->
+    <path
+        android:fillColor="#E0F2FE"
+        android:pathData="M54,27L34,35.5v20.5c0,13.8 8.5,26.8 20,30.2c11.5,-3.4 20,-16.4 20,-30.2V35.5L54,27z" />
+    <!-- Verification Checkmark -->
+    <path
+        android:fillColor="#0F2A4A"
+        android:pathData="M48,63.5L39.5,55l-2.8,2.8l11.3,11.3L72,45.1l-2.8,-2.8L48,63.5z" />
+</vector>

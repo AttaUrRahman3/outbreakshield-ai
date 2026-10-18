@@ -1,0 +1,6 @@
+{
+  "name": "OutbreakShield",
+  "description": "Infection prevention and laboratory biosafety audit co-pilot with deterministic chemical compatibility checks and contextual corrective action debriefs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
