@@ -1,84 +1,70 @@
-# OutbreakShield AI
+# OutbreakShield AI 🛡️
+> **Intelligent Infection Prevention & Clinical Audit Suite**  
+> Built for the **NYLP AI Hackathon 2026** (Theme: Building AI-Powered Products for Real-World Impact)
 
-Offline-First Infection Prevention & Environmental Hygiene Audit Assistant for Healthcare Facilities and Microbiology Laboratories.
-
-Developed for the **NYLP AI Hackathon 2026** under the theme **"Build AI for Real-World Impact"**.
+[![Live Demo](https://img.shields.io/badge/Demo-Live%20App-teal?style=for-the-badge)](https://cleanroom-compass-ai.lovable.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-React%2019%20%7C%20TanStack%20%7C%20Tailwind-blue?style=for-the-badge)](#tech-stack)
 
 ---
 
 ## 1. Problem Statement
-Hospital-Acquired Infections (HAIs) and laboratory-acquired exposures cause preventable morbidity, mortality, and severe institutional burdens worldwide. Pathogens like *Clostridioides difficile*, *Candida auris*, MRSA, and Norovirus require specific, non-interchangeable chemical disinfectants and strict wet contact times. In fast-paced healthcare settings:
-- Cleaning staff often use quaternary ammonium compounds on *C. difficile* spores, falsely believing they are effective.
-- Incompatibilities (e.g., sodium hypochlorite mixed with acids/ammonia creating toxic chloramine gases) pose acute safety hazards.
-- Spills in microbiology laboratories risk aerosol transmission if not escalated immediately to a trained Biosafety Officer (BSO).
-- Cloud-only AI tools fail during network outages or in shielded hospital basements and biocontainment suites.
+Hospital-Acquired Infections (HAIs) affect millions of patients annually and represent one of the leading preventable causes of mortality in healthcare environments. 
+
+Traditional Infection Prevention & Control (IPC) auditing suffers from critical bottlenecks:
+- **Paper & Static Spreadsheets:** Audits take days to digitize, delaying critical responses.
+- **Delayed Risk Detection:** Recurrent sterilization gaps and high-risk vectors often go unnoticed until a full outbreak occurs.
+- **Lack of Actionable Guidance:** Clinical staff receive raw scores rather than prioritized, evidence-backed corrective action steps.
+
+---
 
 ## 2. Solution Overview
-**OutbreakShield AI** is an offline-first, mobile Android audit assistant that enforces **deterministic, uncompromised safety rules** alongside **assistive, sanitized AI coaching**:
-1. **Deterministic Safety Engine:** Runs 100% locally on-device. Evaluates pathogen-disinfectant compatibility (e.g., EPA List K validation for *C. difficile*), wet contact time adherence, chemical mixing hazard detection, and laboratory spill escalation.
-2. **Dual Clinical & Biosafety Workflows:**
-   - **Hospital Clinical Wards:** Room-by-room terminal cleaning audits with high-touch surface checklists (bed rails, IV pumps, call buttons, etc.).
-   - **Microbiology Laboratory:** Biohazard workflows covering Biosafety Cabinets (BSC), inoculation benches, centrifuge touchpoints, and spill containment protocols.
-3. **Safe Audit Reports & Handover:** Monospace-formatted logs detailing verified vs. pending surfaces, deterministic findings, and corrective instructions with Android share-sheet & clipboard integration.
-4. **Offline AI Coaching & Debrief:** Generates non-hallucinatory staff debriefing scripts from verified findings without exposing patient or confidential data.
+**OutbreakShield AI** is an intelligent audit and analytics platform engineered to help healthcare facilities standardize inspections, detect contamination risks in real time, and generate automated, compliance-aligned corrective actions.
+
+By combining streamlined digital checklists with domain-specific AI coaching, OutbreakShield AI bridges the gap between routine facility inspections and proactive patient safety.
 
 ---
 
-## 3. Key Features
-- **Deterministic Rules Evaluation:** Instant safety alerts (Compliant, Moderate, High, Critical) with zero network latency.
-- **Strict High-Touch Checklist:** Unchecked surfaces are never marked compliant; preserves true completion percentage.
-- **Biosafety Escalation:** Automatically routes biohazards, aerosol spills, or untrained incidents to institutional Biosafety Officers.
-- **Chemical Safety Matrix:** Real-time warnings against mixing bleach with acids or ammonia.
-- **Complete Offline Resilience:** Functions seamlessly in basements, negative-pressure rooms, and disconnected environments.
+## 3. Core Features
+- **🏥 Digital Clinical Audits:** Interactive environmental and laboratory safety checklists tailored to medical wards, ICUs, and bio-containment areas.
+- **⚡ Real-Time Risk & Compliance Scoring:** Instant automated categorization of audit performance (Safe, Warning, Critical) with deficiency tracking.
+- **🤖 AI Infection Prevention Coach:** Analyzes audit trails, identifies root-cause patterns (e.g., recurring hand hygiene or ventilation failures), and recommends WHO/CDC-aligned remediation plans.
+- **📊 Interactive Analytics & Trends:** Circular compliance meters, risk distribution charts, and longitudinal score comparisons across departments.
+- **📋 Corrective Action Workflow:** Prioritized findings tracker with status toggles (`Open`, `In Progress`, `Resolved`) to close inspection gaps.
 
 ---
 
-## 4. Tech Stack
-- **Platform:** Native Android (Target SDK 36, Min SDK 24)
-- **Language:** Kotlin
-- **UI Framework:** Jetpack Compose with Material Design 3 (Dynamic Color, Edge-to-Edge)
-- **Architecture:** Clean Architecture / MVVM with immutable state flows
-- **Testing:** JUnit 4 & Robolectric JVM testing for rules engine and UI workflows
+## 4. AI Methodology & System Design
+- **Analytical Reasoning:** Ingests live checklist answers to compute weighted deficiency scores and detect non-compliance anomalies.
+- **Contextual Clinical Assistant:** Leverages a guided IPC knowledge layer that contextualizes audit data against infection control standards, helping audit teams quickly draft escalation protocols.
+- **Zero-Latency In-Browser Architecture:** Works offline-capable in clinical environments using client-side state persistence.
 
 ---
 
-## 5. AI / API Usage & Safety Architecture
-- **Assisted AI Role:** Advisory coaching and staff debrief generation based exclusively on sanitized deterministic findings.
-- **Zero-Trust Safety Rule:** AI commentary can **never** override, suppress, downgrade, or contradict deterministic infection control findings.
-- **Privacy & Sanitization:** Zero PHI (Protected Health Information), staff names, or patient data are sent to language models.
-- **Graceful Fallback:** If live AI services are unconfigured or offline, the app employs an on-device rule-based fallback debrief.
+## 5. Tech Stack
+- **Framework & Routing:** React 19, TanStack Start, TanStack Router
+- **Styling & Design System:** Tailwind CSS v4, Lucide Icons
+- **Data Visualization:** Recharts
+- **State & Storage:** Reactive client-side local cache
+- **Quality & Testing:** Vitest, Testing Library
 
 ---
 
-## 6. Setup & Build Instructions
-1. **Clone the repository:**
-   ```bash
-   git clone <repository-url>
-   cd outbreakshield
-   ```
-2. **Open in Android Studio:**
-   - Android Studio Ladybug | 2024.2.1 or newer recommended.
-   - Gradle will automatically synchronize dependencies.
-3. **Run Unit Tests:**
-   ```bash
-   ./gradlew testDebugUnitTest
-   ```
-4. **Build APK:**
-   ```bash
-   ./gradlew assembleDebug
-   ```
-   The APK will be generated at `app/build/outputs/apk/debug/app-debug.apk`.
+## 6. Setup & Local Development
 
----
+### Prerequisites
+- Node.js 20+ installed
+- npm or bun
 
-## 7. Known Limitations & Future Roadmap
-- Computer vision integration for automated chemical label reading (planned via on-device CameraX and ML Kit).
-- Barcode/QR asset scanning for hospital room inventory tracking.
-- Multi-language support for diverse environmental services staff.
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/<your-repo-name>.git
 
----
+# Navigate into the project folder
+cd <your-repo-name>
 
-## 8. Hackathon Submission Information
-- **Event:** NYLP AI Hackathon 2026
-- **Category:** Healthcare & Environmental Safety
-- **Core Principle:** Safety-First AI — Combining deterministic biomedical logic with generative coaching.
+# Install dependencies
+npm install
+
+# Start local dev server
+npm run dev
